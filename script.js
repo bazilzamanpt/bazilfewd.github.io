@@ -1,15 +1,7 @@
-function appendToDisplay(value) {
-    document.getElementById('display').value += value;
-}
+const colorPicker = document.getElementById("colorPicker");
+const colorCode = document.getElementById("colorCode");
 
-function clearDisplay() {
-    document.getElementById('display').value = '';
-}
-
-function calculate() {
-    try {
-        document.getElementById('display').value = eval(document.getElementById('display').value);
-    } catch {
-        document.getElementById('display').value = 'Error';
-    }
-}
+colorPicker.addEventListener("input", function() {
+    colorCode.textContent = colorPicker.value;
+    document.body.style.background = colorPicker.value;
+});
